@@ -35,7 +35,7 @@ angular.module('slick', []).directive('slick', [
         touchMove: '@',
         touchThreshold: '@',
         vertical: '@',
-        slickApply: '='
+        slickApply: '=?'
       },
       link: function (scope, element, attrs) {
         var initializeSlick, isInitialized;
