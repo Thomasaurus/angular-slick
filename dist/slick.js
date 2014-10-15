@@ -34,13 +34,22 @@ angular.module('slick', []).directive('slick', [
         swipe: '@',
         touchMove: '@',
         touchThreshold: '@',
-        vertical: '@'
+        vertical: '@',
+        slickApply: '='
       },
       link: function (scope, element, attrs) {
         var initializeSlick, isInitialized;
+        var slider;
+        scope.slickApply = function(apply){
+          if (isInitialized) {
+            slider.unslick();
+          }
+          apply();
+          initializeSlick();
+        }
         initializeSlick = function () {
           return $timeout(function () {
-            var currentIndex, slider;
+            var currentIndex;
             slider = $(element);
             if (scope.currentIndex != null) {
               currentIndex = scope.currentIndex;
