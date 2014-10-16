@@ -47,7 +47,7 @@ angular.module('slick', []).directive('slick', [
           }
           apply();
           initializeSlick();
-        }
+        };
         initializeSlick = function () {
           return $timeout(function () {
             var currentIndex;
