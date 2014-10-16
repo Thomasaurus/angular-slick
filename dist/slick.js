@@ -32,6 +32,7 @@ angular.module('slick', []).directive('slick', [
         slidesToScroll: '@',
         speed: '@',
         swipe: '@',
+        swipeToSlide: '@',
         touchMove: '@',
         touchThreshold: '@',
         vertical: '@',
@@ -96,6 +97,7 @@ angular.module('slick', []).directive('slick', [
               slidesToScroll: scope.slidesToScroll != null ? parseInt(scope.slidesToScroll, 10) : 1,
               speed: scope.speed != null ? parseInt(scope.speed, 10) : 300,
               swipe: scope.swipe !== 'false',
+              swipeToSlide: scope.swipeToSlide !== 'false',
               touchMove: scope.touchMove !== 'false',
               touchThreshold: scope.touchThreshold ? parseInt(scope.touchThreshold, 10) : 5,
               vertical: scope.vertical === 'true'
